@@ -1,6 +1,7 @@
 app
 .controller('addGroupCtrl', addGroupCtrl);
   function addGroupCtrl(DALService, SearchDataService, $ionicHistory, $cordovaContacts, Group) {
+    this.ionicService = $ionicHistory;
     this.group = Group;
     this.DALService = DALService;
     this.cordovaContacts = $cordovaContacts;
@@ -19,7 +20,8 @@ app
   }
 
   addGroupCtrl.prototype.myGoBack = function() {
-    $ionicHistory.goBack();
+    this.ionicService.goBack();
+    console.log('bbbbb');
   };
 
 
