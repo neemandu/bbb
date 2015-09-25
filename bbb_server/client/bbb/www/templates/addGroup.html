@@ -1,0 +1,71 @@
+<div ng-controller='addGroupCtrl as vm'>
+	<ion-view view-title='Add Group'>
+		<ion-header-bar class="bar bar-positive">
+		 <a class="button button-icon icon ion-ios-arrow-back" ui-sref="groups"></a>
+
+		    <h1 class="title">Add Group</h1>      
+		    <a ui-sref="groups" ui-sref-opts="{reload: true, notify: true}" class="button button-icon" ng-click="vm.saveGroup(vm.newGroupName)">Save</a> 
+		</ion-header-bar> 
+
+		<ion-content>
+		<br />
+		<br />
+
+		<div class="row">
+		  <div class="col-80 col-offset-10">
+		  	<label class="input">Group Name:
+				</label>
+		  </div>
+		</div>
+
+		<div class="row">
+		  <div class= "col-80 col-offset-10">
+		    <label class="input">
+				  <input id="textboxinput" type="text" ng-model="vm.newGroupName">
+				</label>
+		  </div>
+		</div>
+
+		<br />
+		<br />
+
+		<div class= "row">
+		  <div class="col-80 col-offset-10">
+		  	<label class="input">Participants:
+				</label>
+		  </div>
+		</div>
+
+		<br />
+
+		  <label class="item item-icon-right item-input item-stacked-label
+		   col-80 col-offset-10">
+		    <input type="search" placeholder="Search"
+		     ng-change="vm.search()" ng-model="vm.searchedContacts.search" />
+		     <i class="icon ion-ios-plus-empty" style="padding-top:10px"></i>
+		    </label>
+
+
+		<div>
+		      <ul class="input-dropdown-menu">
+		        <li ng-click="vm.addParticipantToGroup(contact, $index)" class="item col-80 col-offset-10"
+			  	 ng-repeat="contact in vm.searchedContacts.contacts">
+				    {{contact.name}}
+		        </li>
+		      </ul>
+		 </div>
+		
+		<br />
+		<div class="list">
+		      <div class="item item-button-right col-80 col-offset-10" ng-repeat="contact in vm.newGroupParticipants">{{contact.name}}
+		      	<button class="button button-clear" ng-click='vm.removeContact($index)'>
+			      <i class="icon ion-android-close"></i>
+			    </button>
+		      </div>
+		 </div>
+		</ion-content>
+	</ion-view>
+</div>
+
+
+	

@@ -1,0 +1,33 @@
+{
+  "name": "Group",
+  "plural": "Group",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "createdBy": {
+      "type": "string",
+      "required": true
+    },
+    "createdDate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "participants": {
+      "type": "hasMany",
+      "model": "Participant",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,30 @@
+.popover {
+    height: auto;
+}
+.popover ion-header-bar {
+    position: relative;
+}
+.popover ion-content {
+    top: 0;
+    position: relative;
+}/* Empty. Add your own CSS if you like */
+.input-dropdown {
+    position: absolute;
+    background: grey;
+    border: solid 1px #000;
+    z-index: 1001;
+    overflow: visible;
+    border-color: #387ef5;
+}
+
+.input-dropdown-menu {
+	border-color: #387ef5;
+}
+.item-autocomplete { position: static; overflow: visible; }
+#textboxinput {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid black;
+    border-color: #387ef5;
+}

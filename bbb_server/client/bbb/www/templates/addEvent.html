@@ -1,0 +1,77 @@
+<div ng-controller='addEventCtrl as vm'>
+	<ion-view view-title='Add Event'>
+		<ion-header-bar class="bar bar-positive">
+		 <a class="button button-icon icon ion-ios-arrow-back" ui-sref="groups"></a>
+
+		    <h1 class="title">Add Event</h1>      
+		    <a ui-sref="groups" class="button button-icon" ng-click="vm.saveEvent()">Save</a> 
+		</ion-header-bar>
+
+		<ion-content>
+		<br />
+		<br />
+
+		<div class="row">
+		  <div class="col-80 col-offset-10">
+		  	<label class="input">Event Name:
+				</label>
+		  </div>
+		</div>
+
+		<div class="row">
+		  <div class= "col-80 col-offset-10">
+		    <label class="input">
+				  <input id="textboxinput" type="text" ng-model="vm.newEventName">
+				</label>
+		  </div>
+		</div>
+
+		<br />
+		<br />
+
+		<div class="row">
+		  <div class="col-80 col-offset-10">
+		  	<label class="input">Event Date:
+				</label>
+		  </div>
+		</div>
+
+		<div class="row">
+		  <div class= "col-80 col-offset-10">
+		    <label class="input">
+				  <input id="textboxinput" type="text" ng-model="vm.newEventTime">
+				</label>
+		  </div>
+		</div>
+
+<ionic-timepicker etime="hour.epochTime" format="hour.format" step="hour.step" callback="timePickerCallback">    
+<button class="button button-block button-positive"> {{hour.epochTime}} </button>
+</ionic-timepicker>
+
+		<br />
+		<br />
+
+		<div class="row">
+		  <div class="col-80 col-offset-10">
+		  	<label class="input">Event Location:
+				</label>
+		  </div>
+		</div>
+
+		<div class="row">
+		  <div class= "col-80 col-offset-10">
+		    <label class="input">
+				  <input id="textboxinput" type="text" ng-model="vm.newEventLocation">
+				</label>
+		  </div>
+		</div>
+
+		<br />
+		<br />
+
+		</ion-content>
+	</ion-view>
+</div>
+
+
+	
