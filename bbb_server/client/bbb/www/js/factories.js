@@ -8,7 +8,7 @@ app
         var deferred = $q.defer();
 
       var matches = phoneContacts.filter( function(contact) {
-        if(contact.name.toLowerCase().indexOf(searchedContacts.search.toLowerCase()) !== -1 ) return true;
+        if(contact.name.formatted.toLowerCase().indexOf(searchedContacts.search.toLowerCase()) !== -1 ) return true;
       })
 
         $timeout( function(){

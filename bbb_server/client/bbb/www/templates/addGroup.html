@@ -50,14 +50,14 @@
 		      <ul class="input-dropdown-menu">
 		        <li ng-click="vm.addParticipantToGroup(contact, $index)" class="item col-80 col-offset-10"
 			  	 ng-repeat="contact in vm.searchedContacts.contacts">
-				    {{contact.name}}
+				    {{contact.name.formatted}}
 		        </li>
 		      </ul>
 		 </div>
 		
 		<br />
 		<div class="list">
-		      <div class="item item-button-right col-80 col-offset-10" ng-repeat="contact in vm.newGroupParticipants">{{contact.name}}
+		      <div class="item item-button-right col-80 col-offset-10" ng-repeat="contact in vm.newGroupParticipants">{{contact.name.formatted}}
 		      	<button class="button button-clear" ng-click='vm.removeContact($index)'>
 			      <i class="icon ion-android-close"></i>
 			    </button>

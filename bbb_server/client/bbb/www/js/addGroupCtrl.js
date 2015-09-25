@@ -12,8 +12,8 @@ app
     this.newGroupName = '';
     this.newGroupParticipants = [];
 
-    this.getContacts();
-  //  this.getPhoneContacts(this.cordovaContacts, this.phoneContacts);
+  //  this.getContacts();
+    this.getPhoneContacts(this.cordovaContacts, this.phoneContacts);
 
   //  this.getPhoneContacts();
   //  this.sortPhoneContacts();
@@ -61,7 +61,7 @@ app
      //this.getPhoneContacts();
   };
 
-  addGroupCtrl.prototype.getPhoneContacts = function(cordovaContacts, phoneContacts) {
+  addGroupCtrl.prototype.getPhoneContacts = function(cordovaContacts1, phoneContacts) {
        function onSuccess(contacts){
           for(var i = 0; i < contacts.length; i++){
             var contact = contacts[i];
@@ -70,12 +70,12 @@ app
        };
 
        function onError(contactError){
-        alert(contactError);
+        console.error(contactError);
        };
 
        var options = {};
        options.multiple = true;
-       cordovaContacts.find(options).then(onSuccess, onError);
+       this.cordovaContacts.find(options).then(onSuccess, onError);
   };
 
   addGroupCtrl.prototype.saveGroup = function(newGroupName) {
