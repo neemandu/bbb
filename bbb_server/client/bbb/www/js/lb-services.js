@@ -1118,59 +1118,59 @@ module.factory(
   "Group",
   ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
     var R = Resource(
-      urlBase + "/Group/:id",
+      urlBase + "/Groups/:id",
       { 'id': '@id' },
       {
 
-        // INTERNAL. Use Group.participants.findById() instead.
-        "prototype$__findById__participants": {
+        // INTERNAL. Use Group.events.findById() instead.
+        "prototype$__findById__events": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Group/:id/participants/:fk",
+          url: urlBase + "/Groups/:id/events/:fk",
           method: "GET"
         },
 
-        // INTERNAL. Use Group.participants.destroyById() instead.
-        "prototype$__destroyById__participants": {
+        // INTERNAL. Use Group.events.destroyById() instead.
+        "prototype$__destroyById__events": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Group/:id/participants/:fk",
+          url: urlBase + "/Groups/:id/events/:fk",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Group.participants.updateById() instead.
-        "prototype$__updateById__participants": {
+        // INTERNAL. Use Group.events.updateById() instead.
+        "prototype$__updateById__events": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Group/:id/participants/:fk",
+          url: urlBase + "/Groups/:id/events/:fk",
           method: "PUT"
         },
 
-        // INTERNAL. Use Group.participants() instead.
-        "prototype$__get__participants": {
+        // INTERNAL. Use Group.events() instead.
+        "prototype$__get__events": {
           isArray: true,
-          url: urlBase + "/Group/:id/participants",
+          url: urlBase + "/Groups/:id/events",
           method: "GET"
         },
 
-        // INTERNAL. Use Group.participants.create() instead.
-        "prototype$__create__participants": {
-          url: urlBase + "/Group/:id/participants",
+        // INTERNAL. Use Group.events.create() instead.
+        "prototype$__create__events": {
+          url: urlBase + "/Groups/:id/events",
           method: "POST"
         },
 
-        // INTERNAL. Use Group.participants.destroyAll() instead.
-        "prototype$__delete__participants": {
-          url: urlBase + "/Group/:id/participants",
+        // INTERNAL. Use Group.events.destroyAll() instead.
+        "prototype$__delete__events": {
+          url: urlBase + "/Groups/:id/events",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Group.participants.count() instead.
-        "prototype$__count__participants": {
-          url: urlBase + "/Group/:id/participants/count",
+        // INTERNAL. Use Group.events.count() instead.
+        "prototype$__count__events": {
+          url: urlBase + "/Groups/:id/events/count",
           method: "GET"
         },
 
@@ -1208,7 +1208,7 @@ module.factory(
          * </em>
          */
         "create": {
-          url: urlBase + "/Group",
+          url: urlBase + "/Groups",
           method: "POST"
         },
 
@@ -1247,7 +1247,7 @@ module.factory(
          */
         "createMany": {
           isArray: true,
-          url: urlBase + "/Group",
+          url: urlBase + "/Groups",
           method: "POST"
         },
 
@@ -1285,7 +1285,7 @@ module.factory(
          * </em>
          */
         "upsert": {
-          url: urlBase + "/Group",
+          url: urlBase + "/Groups",
           method: "PUT"
         },
 
@@ -1317,7 +1317,7 @@ module.factory(
          *  - `exists` – `{boolean=}` - 
          */
         "exists": {
-          url: urlBase + "/Group/:id/exists",
+          url: urlBase + "/Groups/:id/exists",
           method: "GET"
         },
 
@@ -1352,7 +1352,7 @@ module.factory(
          * </em>
          */
         "findById": {
-          url: urlBase + "/Group/:id",
+          url: urlBase + "/Groups/:id",
           method: "GET"
         },
 
@@ -1386,7 +1386,7 @@ module.factory(
          */
         "find": {
           isArray: true,
-          url: urlBase + "/Group",
+          url: urlBase + "/Groups",
           method: "GET"
         },
 
@@ -1419,7 +1419,7 @@ module.factory(
          * </em>
          */
         "findOne": {
-          url: urlBase + "/Group/findOne",
+          url: urlBase + "/Groups/findOne",
           method: "GET"
         },
 
@@ -1453,7 +1453,7 @@ module.factory(
          * This method returns no data.
          */
         "updateAll": {
-          url: urlBase + "/Group/update",
+          url: urlBase + "/Groups/update",
           method: "POST"
         },
 
@@ -1483,7 +1483,7 @@ module.factory(
          * This method returns no data.
          */
         "deleteById": {
-          url: urlBase + "/Group/:id",
+          url: urlBase + "/Groups/:id",
           method: "DELETE"
         },
 
@@ -1515,7 +1515,7 @@ module.factory(
          *  - `count` – `{number=}` - 
          */
         "count": {
-          url: urlBase + "/Group/count",
+          url: urlBase + "/Groups/count",
           method: "GET"
         },
 
@@ -1552,7 +1552,7 @@ module.factory(
          * </em>
          */
         "prototype$updateAttributes": {
-          url: urlBase + "/Group/:id",
+          url: urlBase + "/Groups/:id",
           method: "PUT"
         },
 
@@ -1589,7 +1589,7 @@ module.factory(
          *  - `changes` – `{ReadableStream=}` - 
          */
         "createChangeStream": {
-          url: urlBase + "/Group/change-stream",
+          url: urlBase + "/Groups/change-stream",
           method: "POST"
         },
       }
@@ -1730,27 +1730,27 @@ module.factory(
 
     /**
      * @ngdoc object
-     * @name lbServices.Group.participants
-     * @header lbServices.Group.participants
+     * @name lbServices.Group.events
+     * @header lbServices.Group.events
      * @object
      * @description
      *
-     * The object `Group.participants` groups methods
-     * manipulating `Participant` instances related to `Group`.
+     * The object `Group.events` groups methods
+     * manipulating `Event` instances related to `Group`.
      *
-     * Call {@link lbServices.Group#participants Group.participants()}
+     * Call {@link lbServices.Group#events Group.events()}
      * to query all related instances.
      */
 
 
         /**
          * @ngdoc method
-         * @name lbServices.Group#participants
+         * @name lbServices.Group#events
          * @methodOf lbServices.Group
          *
          * @description
          *
-         * Queries participants of Group.
+         * Queries events of Group.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1770,23 +1770,23 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Participant` object.)
+         * This usually means the response is a `Event` object.)
          * </em>
          */
-        R.participants = function() {
-          var TargetResource = $injector.get("Participant");
-          var action = TargetResource["::get::Group::participants"];
+        R.events = function() {
+          var TargetResource = $injector.get("Event");
+          var action = TargetResource["::get::Group::events"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Group.participants#count
-         * @methodOf lbServices.Group.participants
+         * @name lbServices.Group.events#count
+         * @methodOf lbServices.Group.events
          *
          * @description
          *
-         * Counts participants of Group.
+         * Counts events of Group.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1808,20 +1808,20 @@ module.factory(
          *
          *  - `count` – `{number=}` - 
          */
-        R.participants.count = function() {
-          var TargetResource = $injector.get("Participant");
-          var action = TargetResource["::count::Group::participants"];
+        R.events.count = function() {
+          var TargetResource = $injector.get("Event");
+          var action = TargetResource["::count::Group::events"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Group.participants#create
-         * @methodOf lbServices.Group.participants
+         * @name lbServices.Group.events#create
+         * @methodOf lbServices.Group.events
          *
          * @description
          *
-         * Creates a new instance in participants of this model.
+         * Creates a new instance in events of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1843,23 +1843,23 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Participant` object.)
+         * This usually means the response is a `Event` object.)
          * </em>
          */
-        R.participants.create = function() {
-          var TargetResource = $injector.get("Participant");
-          var action = TargetResource["::create::Group::participants"];
+        R.events.create = function() {
+          var TargetResource = $injector.get("Event");
+          var action = TargetResource["::create::Group::events"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Group.participants#createMany
-         * @methodOf lbServices.Group.participants
+         * @name lbServices.Group.events#createMany
+         * @methodOf lbServices.Group.events
          *
          * @description
          *
-         * Creates a new instance in participants of this model.
+         * Creates a new instance in events of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1881,23 +1881,23 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Participant` object.)
+         * This usually means the response is a `Event` object.)
          * </em>
          */
-        R.participants.createMany = function() {
-          var TargetResource = $injector.get("Participant");
-          var action = TargetResource["::createMany::Group::participants"];
+        R.events.createMany = function() {
+          var TargetResource = $injector.get("Event");
+          var action = TargetResource["::createMany::Group::events"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Group.participants#destroyAll
-         * @methodOf lbServices.Group.participants
+         * @name lbServices.Group.events#destroyAll
+         * @methodOf lbServices.Group.events
          *
          * @description
          *
-         * Deletes all participants of this model.
+         * Deletes all events of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1915,26 +1915,26 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.participants.destroyAll = function() {
-          var TargetResource = $injector.get("Participant");
-          var action = TargetResource["::delete::Group::participants"];
+        R.events.destroyAll = function() {
+          var TargetResource = $injector.get("Event");
+          var action = TargetResource["::delete::Group::events"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Group.participants#destroyById
-         * @methodOf lbServices.Group.participants
+         * @name lbServices.Group.events#destroyById
+         * @methodOf lbServices.Group.events
          *
          * @description
          *
-         * Delete a related item by id for participants.
+         * Delete a related item by id for events.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `fk` – `{*}` - Foreign key for participants
+         *  - `fk` – `{*}` - Foreign key for events
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -1948,26 +1948,26 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.participants.destroyById = function() {
-          var TargetResource = $injector.get("Participant");
-          var action = TargetResource["::destroyById::Group::participants"];
+        R.events.destroyById = function() {
+          var TargetResource = $injector.get("Event");
+          var action = TargetResource["::destroyById::Group::events"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Group.participants#findById
-         * @methodOf lbServices.Group.participants
+         * @name lbServices.Group.events#findById
+         * @methodOf lbServices.Group.events
          *
          * @description
          *
-         * Find a related item by id for participants.
+         * Find a related item by id for events.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `fk` – `{*}` - Foreign key for participants
+         *  - `fk` – `{*}` - Foreign key for events
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -1981,29 +1981,29 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Participant` object.)
+         * This usually means the response is a `Event` object.)
          * </em>
          */
-        R.participants.findById = function() {
-          var TargetResource = $injector.get("Participant");
-          var action = TargetResource["::findById::Group::participants"];
+        R.events.findById = function() {
+          var TargetResource = $injector.get("Event");
+          var action = TargetResource["::findById::Group::events"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Group.participants#updateById
-         * @methodOf lbServices.Group.participants
+         * @name lbServices.Group.events#updateById
+         * @methodOf lbServices.Group.events
          *
          * @description
          *
-         * Update a related item by id for participants.
+         * Update a related item by id for events.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `fk` – `{*}` - Foreign key for participants
+         *  - `fk` – `{*}` - Foreign key for events
          *
          * @param {Object} postData Request data.
          *
@@ -2021,12 +2021,12 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `Participant` object.)
+         * This usually means the response is a `Event` object.)
          * </em>
          */
-        R.participants.updateById = function() {
-          var TargetResource = $injector.get("Participant");
-          var action = TargetResource["::updateById::Group::participants"];
+        R.events.updateById = function() {
+          var TargetResource = $injector.get("Event");
+          var action = TargetResource["::updateById::Group::events"];
           return action.apply(R, arguments);
         };
 
@@ -2476,65 +2476,6 @@ module.factory(
           url: urlBase + "/Participants/change-stream",
           method: "POST"
         },
-
-        // INTERNAL. Use Group.participants.findById() instead.
-        "::findById::Group::participants": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/Group/:id/participants/:fk",
-          method: "GET"
-        },
-
-        // INTERNAL. Use Group.participants.destroyById() instead.
-        "::destroyById::Group::participants": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/Group/:id/participants/:fk",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use Group.participants.updateById() instead.
-        "::updateById::Group::participants": {
-          params: {
-          'fk': '@fk'
-          },
-          url: urlBase + "/Group/:id/participants/:fk",
-          method: "PUT"
-        },
-
-        // INTERNAL. Use Group.participants() instead.
-        "::get::Group::participants": {
-          isArray: true,
-          url: urlBase + "/Group/:id/participants",
-          method: "GET"
-        },
-
-        // INTERNAL. Use Group.participants.create() instead.
-        "::create::Group::participants": {
-          url: urlBase + "/Group/:id/participants",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Group.participants.createMany() instead.
-        "::createMany::Group::participants": {
-          isArray: true,
-          url: urlBase + "/Group/:id/participants",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Group.participants.destroyAll() instead.
-        "::delete::Group::participants": {
-          url: urlBase + "/Group/:id/participants",
-          method: "DELETE"
-        },
-
-        // INTERNAL. Use Group.participants.count() instead.
-        "::count::Group::participants": {
-          url: urlBase + "/Group/:id/participants/count",
-          method: "GET"
-        },
       }
     );
 
@@ -2670,6 +2611,648 @@ module.factory(
     * i.e. `Participant`.
     */
     R.modelName = "Participant";
+
+
+    return R;
+  }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.Event
+ * @header lbServices.Event
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Event` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+module.factory(
+  "Event",
+  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
+    var R = Resource(
+      urlBase + "/Events/:id",
+      { 'id': '@id' },
+      {
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#create
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Event` object.)
+         * </em>
+         */
+        "create": {
+          url: urlBase + "/Events",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#createMany
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Event` object.)
+         * </em>
+         */
+        "createMany": {
+          isArray: true,
+          url: urlBase + "/Events",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#upsert
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Event` object.)
+         * </em>
+         */
+        "upsert": {
+          url: urlBase + "/Events",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#exists
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Check whether a model instance exists in the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `exists` – `{boolean=}` - 
+         */
+        "exists": {
+          url: urlBase + "/Events/:id/exists",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#findById
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Find a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         *  - `filter` – `{object=}` - Filter defining fields and include
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Event` object.)
+         * </em>
+         */
+        "findById": {
+          url: urlBase + "/Events/:id",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#find
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Find all instances of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Event` object.)
+         * </em>
+         */
+        "find": {
+          isArray: true,
+          url: urlBase + "/Events",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#findOne
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Find first instance of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Event` object.)
+         * </em>
+         */
+        "findOne": {
+          url: urlBase + "/Events/findOne",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#updateAll
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "updateAll": {
+          url: urlBase + "/Events/update",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#deleteById
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "deleteById": {
+          url: urlBase + "/Events/:id",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#count
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Count instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        "count": {
+          url: urlBase + "/Events/count",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#prototype$updateAttributes
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Update attributes for a model instance and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Event` object.)
+         * </em>
+         */
+        "prototype$updateAttributes": {
+          url: urlBase + "/Events/:id",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#createChangeStream
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Create a change stream.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `options` – `{object=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `changes` – `{ReadableStream=}` - 
+         */
+        "createChangeStream": {
+          url: urlBase + "/Events/change-stream",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Group.events.findById() instead.
+        "::findById::Group::events": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/events/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Group.events.destroyById() instead.
+        "::destroyById::Group::events": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/events/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Group.events.updateById() instead.
+        "::updateById::Group::events": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/Groups/:id/events/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Group.events() instead.
+        "::get::Group::events": {
+          isArray: true,
+          url: urlBase + "/Groups/:id/events",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Group.events.create() instead.
+        "::create::Group::events": {
+          url: urlBase + "/Groups/:id/events",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Group.events.createMany() instead.
+        "::createMany::Group::events": {
+          isArray: true,
+          url: urlBase + "/Groups/:id/events",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Group.events.destroyAll() instead.
+        "::delete::Group::events": {
+          url: urlBase + "/Groups/:id/events",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Group.events.count() instead.
+        "::count::Group::events": {
+          url: urlBase + "/Groups/:id/events/count",
+          method: "GET"
+        },
+      }
+    );
+
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#updateOrCreate
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Event` object.)
+         * </em>
+         */
+        R["updateOrCreate"] = R["upsert"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#update
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R["update"] = R["updateAll"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#destroyById
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R["destroyById"] = R["deleteById"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Event#removeById
+         * @methodOf lbServices.Event
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R["removeById"] = R["deleteById"];
+
+
+    /**
+    * @ngdoc property
+    * @name lbServices.Event#modelName
+    * @propertyOf lbServices.Event
+    * @description
+    * The name of the model represented by this $resource,
+    * i.e. `Event`.
+    */
+    R.modelName = "Event";
 
 
     return R;

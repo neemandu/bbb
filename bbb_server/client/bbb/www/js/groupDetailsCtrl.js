@@ -8,11 +8,23 @@ app
     $scope.popover = popover;
   });
   console.log('$stateParams.id : ' + $stateParams.groupId );
-   $scope.group = Group.findById({ id: $stateParams.groupId });  
-   $scope.events = [
+   Group.findById({ id: $stateParams.groupId }).
+   $promise.then(function (group) {
+      $scope.group = group;
+      console.log('$scope.group.name : ' + JSON.stringify($scope.group.name));
+   });  
+   
+   Group.events({id: $stateParams.groupId}).
+   $promise.then(function (events) {
+      $scope.events = events;
+      console.log('events : ' + JSON.stringify(events));
+   }).catch(function(e) {
+      console.log('error: ' + JSON.stringify(e.status)); // "oh, no!"
+    });
+  /* $scope.events = [
     { name: 'Michalis Birthday', id: 1 },
     { name: 'Yelenas Birthday', id: 2 }
-  ];
+  ];*/
   $scope.removeGroup = function(){
 
       Group.deleteById({ id: $scope.group.id });

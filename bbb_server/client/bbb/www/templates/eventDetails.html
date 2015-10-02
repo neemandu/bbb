@@ -1,5 +1,5 @@
 
-<ion-view view-title="{{group.name}}">
+<ion-view view-title="{{event.name}}">
   
 	<ion-nav-bar class="bar-positive">
   
@@ -15,10 +15,8 @@
     </ion-nav-bar>
 
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="event in events" href="#/groups/{{group.id}}/events/{{event.id}}">
-        {{event.name}}
-      </ion-item>
-    </ion-list>
+    <p>name: {{event.name}}</p>
+	<p>place: {{event.place}}</p>
+	<p>date: {{event.date}}</p>
   </ion-content>
 </ion-view>

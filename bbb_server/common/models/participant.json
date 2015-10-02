@@ -1,5 +1,6 @@
 {
   "name": "Participant",
+  "plural": "Participants",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {

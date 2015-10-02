@@ -1,6 +1,6 @@
 {
-  "name": "Group",
-  "plural": "Groups",
+  "name": "Event",
+  "plural": "Events",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -11,23 +11,26 @@
       "type": "string",
       "required": true
     },
-    "createdBy": {
+    "datetime": {
+      "type": "date",
+      "required": true
+    },
+    "place": {
       "type": "string",
       "required": true
     },
-    "createdDate": {
-      "type": "date",
+    "groupId": {
+      "type": "string",
       "required": true
+    },
+    "images": {
+      "type": [
+        "any"
+      ]
     }
   },
   "validations": [],
-  "relations": {
-    "events": {
-      "type": "hasMany",
-      "model": "Event",
-      "foreignKey": "groupId"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }
